@@ -32,11 +32,11 @@ end
 
 def create_disks(vbox, name)
   # TODO: check that VM is created first time to avoid double vagrant up
-  unless controller_exists(name, 'SATA Controller')
-    vbox.customize ['storagectl', :id,
-                    '--name', 'SATA Controller',
-                    '--add', 'sata']
-  end
+ # unless controller_exists(name, 'SATA Controller')
+ #   vbox.customize ['storagectl', :id,
+ #                   '--name', 'SATA Controller',
+ #                   '--add', 'sata']
+ # end
 
   dir = "../vdisks"
   FileUtils.mkdir_p dir unless File.directory?(dir)
