@@ -41,7 +41,7 @@ def create_disks(vbox, name)
   dir = "../vdisks"
   FileUtils.mkdir_p dir unless File.directory?(dir)
 
-  disks = (1..6).map { |x| ["disk#{x}_", '1024'] }
+  disks = (1..8).map { |x| ["disk#{x}_", '1024'] }
 
   disks.each_with_index do |(name, size), i|
     file_to_disk = "#{dir}/#{name}.vdi"
